@@ -1,29 +1,109 @@
-h1{
-  border-color: #d3e644;
-  border-style: dashed;
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #021c3e; /* base color, so edges are never empty */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: larger;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 20px;
+body::before {
+  content: '';
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 85% 90%, #019c1e 0%, transparent 45%),
+    radial-gradient(circle at 70% 70%, #23472b 0%, transparent 40%),
+    radial-gradient(circle at 20% 30%, #45658a 0%, transparent 50%),
+    radial-gradient(circle at 10% 85%, #28624d 0%, transparent 35%),
+    radial-gradient(circle at 50% 10%, #406eae 0%, transparent 45%);
+  filter: blur(20px);
 }
 
-th, td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  background-color: rgba(219, 218, 218, 0.1);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%); 
+  border-radius: 25px;
+  width: 30%;
+  align-items: center;
+  flex-direction: column;
 }
 
-th {
-  background-color: #f2f2f2;
+main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0) 70%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  width: 200px;
+  transition: transform 0.5s ease 0.2s, backdrop-filter 0.5s ease;
+  border-radius: 0;
+  padding:2px;
+  border-radius: 5px;
+  backdrop-filter: blur(0) brightness(.45);
+}
+
+li:hover {
+  transform: scale(102%);
+  backdrop-filter: blur(100px) brightness(2);
+}
+
+.done-btn{
+  float: right;
+  background-color: rgba(0,0,0,0);
+  border:none;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.done-btn:hover{
+  transform: scale(108%);
+}
+
+label {
   font-weight: bold;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+input {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  border-radius: 2px;
+  backdrop-filter: blur(100px) brightness(100%);
+  padding: 2px;
+  transition: transform 0.5s ease, backdrop-filter 0.5s ease;
+  cursor: pointer;
+  margin:0;
 }
 
-tbody tr:hover {
-  background-color: #e9e9e9;
+input:hover {
+  transform: scale(102%);
+  backdrop-filter: blur(100px) brightness(200%);
 }
