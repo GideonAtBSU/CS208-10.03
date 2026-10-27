@@ -3,23 +3,29 @@
 
 <head>
   <meta charset="utf-8">
-  <title>CS208 - Starter Code (UPDATE ME)!</title>
+  <title>CS208 - 10.03</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>HTML Rocks!!</h1>
-  <ul>
-  <li><a href="/hello">Click here to say hello</a></li>
-  <li><button id="hello-link">Click Me!</button></li>
-  <li><button id="joke-button">Dad Joke!</button></li>
+  <h1>To-Do List</h1>
+    <label for="newTask">New task:</label> 
+    <input type="text" name="task" id="newTask">
+    <input type="button" name="add" value="Add" id="addButton">
+    <ol>
+      <li>
+        <span class="task-text">Clean Bathroom</span><button class="done-btn">&#10006;</button>
+      </li>
+      <li>
+        <span class="task-text">Study for big exam</span><button class="done-btn">&#10006;</button>
+      </li>
+      <li>
+        <span class="task-text">Feed fish</span><button class="done-btn">&#10006;</button>
+      </li>
+    </ol>
   <script src="script.js"></script>
-  </ul>
-  <img src="funny.png" alt="Funny Image" width="300" height="200">
-
-  <h2 id="joke-display"></h2>
 </body>
 
 </html>
